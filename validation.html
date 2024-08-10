@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0;
+            background: url('your-background-image-url-here.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .header-image {
+            width: 100%;
+            height: auto;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: -20px; 
+            z-index: 1; /* Ensure the login form is above the background */
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        // Predefined set of valid roll numbers and dates of birth
+        const validUsers = [
+            { rollNumber: "22NN1A4434", dob: "24102005" }, 
+            { rollNumber: "22NN1A4435", dob: "28092004" }, 
+            { rollNumber: "22NN1A07", dob: "31072005" },
+             { rollNumber: "22NN1A08", dob: "07032004" },
+              { rollNumber: "22NN1A26", dob: "15112004" },
+            { rollNumber: "22NN1A38", dob: "29042005" },
+           { rollNumber: "22NN1A08", dob: "31031995" },
+             
+        ];
+
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var rollNumber = document.forms["loginForm"]["rollNumber"].value;
+            var password = document.forms["loginForm"]["password"].value;
+
+            // Regex to match the pattern 22NN1A#### where N is any uppercase letter and # is any digit
+            var rollNumberPattern = /^22[A-Z]{2}1A\d{4}$/;
+
+            if (rollNumber === "") {
+                alert("Roll number must be filled out");
+                return false;
+            }
+
+            if (!rollNumberPattern.test(rollNumber)) {
+                alert("Roll number must follow the pattern 22NN1A#### where N is any uppercase letter and # is any digit");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Password must be filled out");
+                return false;
+            }
+
+            // Check if the roll number and password (date of birth) are valid
+            const user = validUsers.find(user => user.rollNumber === rollNumber && user.dob === password);
+
+            if (!user) {
+                alert("Invalid roll number or password");
+                return false;
+            }
+
+            // If validation passes, redirect to e.html
+            window.location.href = "file:///C:/Users/pakal/Desktop/New%20folder/e.html";
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <img src="" alt="Header Image" class="header-image">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form name="loginForm" onsubmit="validateForm(event)" method="post">
+            <input type="text" name="rollNumber" placeholder="Enter Roll Number" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

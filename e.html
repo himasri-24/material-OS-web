@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MATERIAL OASIS</title>
+  <style>
+    body {
+      background-image: url('./CCC.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+    }
+   {
+  margin: 2px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 0px 2rem;
+  border: orange;
+}
+
+.main-heading {
+  font-size: 3rem;
+  margin: 2rem 0rem 1rem;
+  color: yellow;
+  text-align: center;
+}
+.form-class {
+  margin: 2rem 0.6px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-field {
+  margin: 1rem 0px 0.6rem;
+}
+
+.field-head {
+  font-size: 2rem;
+}
+
+.input-div {
+  margin-bottom:20px;
+color: yellow;
+}
+
+.field-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.form-control-input {
+  font-size: 1.6rem;
+  padding: 0.2rem 0.4px;
+  text-indent:0.5rem;
+  border: none;
+  
+  border-radius: 5px;
+  width: 60%;
+  color: tomato;
+}
+option {
+  color:fuchsia;
+}
+.radio {
+  outline: none;
+}
+
+.form-control-input:focus {
+  color: fuchsia;
+  background-color: LightCyan;
+  border-color:orange;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+gap=2rem;
+}
+
+.help-text {
+  font-size: 2rem;
+  margin-top: 0.4rem;
+  padding: 0.1rem;
+
+}
+
+button {
+  font-size: 2rem;
+  margin: 20px auto;
+  display: block;
+  color:fuchsia;
+  padding: 0.2rem 1.0rem;
+  border: 10px solid white;
+  background-color:skyblue;
+  color: fuchsia;
+  border-radius: 5px;
+  box-shadow: 10px #0000;
+
+}
+.button:hover {
+  background-color: #0056b3; /* Button color on hover */
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="main-heading">MATERIAL OASIS</h1>
+
+  <form class="form-class" onsubmit="redirectToPage(event)">
+    <div class="form-control">
+      <div class="input-div">
+        <div class="help-text">Select Regulation</div>
+        <select class="form-control-input" name="REGULATION" id="regulation" required>
+          <option value="R20">R20</option>
+        </select>
+      </div>
+      <div class="input-div">
+        <div class="help-text">Select Branch</div>
+        <select class="form-control-input" name="BRANCH" id="branch" required>
+          <option value="CSE">CSE</option>
+          <option value="DS">DS</option>
+          <option value="AIML">AIML</option>
+          <option value="IT">IT</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+        </select>
+      </div>
+      <div class="input-div">
+        <div class="help-text">Select Year</div>
+        <select class="form-control-input" name="YEAR" id="year" required>
+          <option value="I">I</option>
+          <option value="II">II</option>
+          <option value="III">III</option>
+          <option value="IV">IV</option>
+        </select>
+      </div>
+      <div class="input-div">
+        <div class="help-text">Select Semester</div>
+        <select class="form-control-input" name="SEMESTER" id="semester" required>
+          <option value="I">I</option>
+          <option value="II">II</option>
+        </select>
+      </div>
+    </div>
+   
+    <button type="submit" id="submit">Submit</button>
+  </form>
+</div>
+<script>
+    function redirectToPage(event) {
+      event.preventDefault();
+      var regulation = document.getElementById("regulation").value;
+      var branch = document.getElementById("branch").value;
+      var year = document.getElementById("year").value;
+      var semester = document.getElementById("semester").value;
+      var submit;
+     if (regulation === "R20" && branch === "CSE" && year === "I" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE%20%20IT1-1.HTML";
+} else if (regulation === "R20" && branch === "CSE" && year === "I" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE1-2.HTML";
+} else if (regulation === "R20" && branch === "CSE" && year === "II" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE2-1.html";
+} else if (regulation === "R20" && branch === "CSE" && year === "II" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE 2-2.html";
+} else if (regulation === "R20" && branch === "CSE" && year === "III" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE3-1.html";
+} else if (regulation === "R20" && branch === "CSE" && year === "III" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE3-2.html";
+} else if (regulation === "R20" && branch === "DS" && year === "I" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/ds%201-1.html";
+} else if (regulation === "R20" && branch === "DS" && year === "I" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/DS1-2.HTML";
+} else if (regulation === "R20" && branch === "DS" && year === "II" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/DS2-1.html";
+} else if (regulation === "R20" && branch === "DS" && year === "II" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/DS2-2.html";
+} else if (regulation === "R20" && branch === "DS" && year === "III" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/DS3-1.html";
+} else if (regulation === "R20" && branch === "DS" && year === "III" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/DS3-2.html";
+} else if (regulation === "R20" && branch === "AIML" && year === "I" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/ds 1-1.html";
+} else if (regulation === "R20" && branch === "AIML" && year === "I" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ds/DS1-2.html";
+} else if (regulation === "R20" && branch === "AIML" && year === "II" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/aiml/AIML2-1.HTML";
+} else if (regulation === "R20" && branch === "AIML" && year === "II" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/aiml/AIML2-2.html";
+} else if (regulation === "R20" && branch === "AIML" && year === "III" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/aiml/AIML3-1.html";
+} else if (regulation === "R20" && branch === "AIML" && year === "III" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/aiml/AIML3-2.html";
+} else if (regulation === "R20" && branch === "ECE" && year === "I" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ece/ECE1-1.HTML";
+} else if (regulation === "R20" && branch === "ECE" && year === "I" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ece/ECE%201-2.HTML";
+} else if (regulation === "R20" && branch === "ECE" && year === "II" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ece/ECE2-1.HTML";
+} else if (regulation === "R20" && branch === "ECE" && year === "II" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ece/ECE2-2.html";
+} else if (regulation === "R20" && branch === "ECE" && year === "III" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ece/ECE3-1.html";
+} else if (regulation === "R20" && branch === "ECE" && year === "III" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/ece/ECE3-2.html";
+} else if (regulation === "R20" && branch === "EEE" && year === "I" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/eee/1-1EEE.HTML";
+} else if (regulation === "R20" && branch === "EEE" && year === "I" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/eee/1-2EEE.html";
+} else if (regulation === "R20" && branch === "EEE" && year === "II" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/eee/EEE2-1.html";
+} else if (regulation === "R20" && branch === "EEE" && year === "II" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/eee/EEE2-2.html";
+} else if (regulation === "R20" && branch === "EEE" && year === "III" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/eee/EEE3-1.html";
+} else if (regulation === "R20" && branch === "EEE" && year === "III" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/eee/EEE3-2.html";
+} else if (regulation === "R20" && branch === "IT" && year === "I" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE%20%20IT1-1.HTML";
+} else if (regulation === "R20" && branch === "IT" && year === "I" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/cse/CSE1-2.HTML";
+} else if (regulation === "R20" && branch === "IT" && year === "II" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/it/IT%202-1.HTML";
+} else if (regulation === "R20" && branch === "IT" && year === "II" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/it/IT2-2.html";
+} else if (regulation === "R20" && branch === "IT" && year === "III" && semester === "I") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/it/IT3-1.html";
+} else if (regulation === "R20" && branch === "IT" && year === "III" && semester === "II") {
+  submit = "file:///C:/Users/pakal/Desktop/New%20folder/it/IT3-2.html";
+} 
+else {
+  submit = "defaultPage.html";
+}
+window.location.href = submit; 
+  }
+</script>
+</body>
+</html>
